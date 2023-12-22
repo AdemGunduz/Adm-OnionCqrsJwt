@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Adm.Application.Mappings;
+using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -15,7 +16,7 @@ namespace Adm.Application
             {
                 opt.AddProfiles(new List<Profile>
                 {
-
+                    new CategoryProfile()
                 });
             });
 
