@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Adm.Application.Features.CQRS.Handlers
 {
-    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest , CreateCategoryCommandResponse>
+    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, CreateCategoryCommandResponse>
     {
         private readonly IRepository<Category> repository;
         private readonly IMapper mapper;
@@ -24,11 +24,11 @@ namespace Adm.Application.Features.CQRS.Handlers
 
         public async Task<CreateCategoryCommandResponse> Handle(CreateCategoryCommandRequest request, CancellationToken cancellationToken)
         {
-            await repository.CreateAsync(new Category
+           await repository.CreateAsync(new Category
             {
                 Definition = request.Definition,
             });
-            return new CreateCategoryCommandResponse() ;
+            return new CreateCategoryCommandResponse();
         }
     }
 }

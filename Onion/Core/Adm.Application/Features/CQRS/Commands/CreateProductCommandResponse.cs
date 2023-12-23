@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Adm.Application.Features.CQRS.Commands
 {
-    public class DeleteCategoryCommandResponse: IRequest<DeleteCategoryCommandRequest>
+    public class CreateProductCommandResponse : IRequest<CreateProductCommandRequest>
     {
-        
+       
     }
 }

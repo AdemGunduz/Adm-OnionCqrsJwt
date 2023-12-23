@@ -9,5 +9,6 @@ namespace Adm.Application.Features.CQRS.Commands
 {
     public class CreateCategoryCommandResponse:IRequest<CreateCategoryCommandRequest>
     {
+        
     }
 }

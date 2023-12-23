@@ -44,8 +44,9 @@ namespace Adm.Api.Controllers
         public async Task<IActionResult>Delete([FromBody] DeleteCategoryCommandRequest request)
         {
             await mediator.Send(request);
-            return NoContent();
+            return Ok();
         }
+
 
     }
 }
