@@ -28,7 +28,7 @@ namespace Adm.Application.Features.CQRS.Handlers
             if (data != null)
             {
                 data.Definition = request.Definition;
-                await this.repository.UpdateAsync(data);
+                await this.repository.SaveChangesAsync();
             }
             return new UpdateCategoryCommandResponse();
         }

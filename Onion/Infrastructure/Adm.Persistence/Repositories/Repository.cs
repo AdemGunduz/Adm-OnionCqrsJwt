@@ -48,6 +48,11 @@ namespace Adm.Persistence.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
         public  async Task UpdateAsync(T entity)
         {
             _context.Set<T>().Update(entity);

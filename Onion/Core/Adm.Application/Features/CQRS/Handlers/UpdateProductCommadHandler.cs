@@ -31,7 +31,7 @@ namespace Adm.Application.Features.CQRS.Handlers
                 updatedProduct.Name = request.Name;
                 updatedProduct.Stock = request.Stock;
                 updatedProduct.Price = request.Price;
-                await this.repository.UpdateAsync(updatedProduct);
+                await this.repository.SaveChangesAsync();
             }
             return new UpdateProductCommandResponses();
         }

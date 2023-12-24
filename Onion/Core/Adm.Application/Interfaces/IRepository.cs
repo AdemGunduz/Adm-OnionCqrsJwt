@@ -12,8 +12,10 @@ namespace Adm.Application.Interfaces
         Task<List<T>> GetAllAsync();
         Task<T?> GetByIdAsync(object id);
         Task<T?> GetByFilterAsync(Expression<Func<T, bool>> filter);
+  
         Task CreateAsync(T entity);
         Task UpdateAsync(T entity);
+        Task<int> SaveChangesAsync();
         Task RemoveAsync(T entity);
 
     }

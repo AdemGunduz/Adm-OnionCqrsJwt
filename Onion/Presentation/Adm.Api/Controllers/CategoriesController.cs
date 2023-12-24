@@ -1,11 +1,14 @@
 ﻿using Adm.Application.Features.CQRS.Commands;
 using Adm.Application.Features.CQRS.Quaries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Adm.Api.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase

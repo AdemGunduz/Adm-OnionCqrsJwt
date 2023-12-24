@@ -1,11 +1,13 @@
 ﻿using Adm.Application.Features.CQRS.Commands;
 using Adm.Application.Features.CQRS.Quaries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Adm.Api.Controllers
 {
+    [Authorize(Roles= "Admin,Member")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
@@ -33,7 +35,7 @@ namespace Adm.Api.Controllers
             await mediator.Send(request);
             return NoContent();
         }
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public async Task<IActionResult> Delete([FromBody]DeleteProductCommandRequest request)
         {
             await mediator.Send(request);
